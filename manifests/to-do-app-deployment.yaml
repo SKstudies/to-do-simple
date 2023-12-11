@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: to-do-app
-        image: cicdk8s.azurecr.io/skstudiesblogs
+        image: todoacrk8s.azurecr.io/skstudiestodosimple
         ports:
         - containerPort: 3000
         env:
