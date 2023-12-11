@@ -1,0 +1,19 @@
+# apiVersion : apps/v1
+# kind: Deployment
+# metadata:
+#   name: skstudiesblogs 
+# spec:
+#   replicas: 1
+#   selector:
+#     matchLabels:
+#       app: skstudiesblogs
+#   template:
+#     metadata:
+#       labels:
+#         app: skstudiesblogs 
+#     spec:
+#       containers:
+#         - name: skstudiesblogs 
+#           image: cicdk8s.azurecr.io/skstudiesblogs
+#           ports:
+#           - containerPort: 80

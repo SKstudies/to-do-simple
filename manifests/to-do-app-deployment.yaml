@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: to-do-app-deployment
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: to-do-app
+  template:
+    metadata:
+      labels:
+        app: to-do-app
+    spec:
+      containers:
+      - name: to-do-app
+        image: cicdk8s.azurecr.io/skstudiesblogs
+        ports:
+        - containerPort: 3000
+        env:
+        - name: MONGODB_URI
+          valueFrom:
+            secretKeyRef:
+              name: to-do-app-secrets
+              key: MONGODB_URI
+        
